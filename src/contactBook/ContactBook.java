@@ -92,5 +92,19 @@ public class ContactBook {
     public Contact next() {
         return contacts[currentContact++];
     }
+    public String getNameFromContact(int phone){
+        boolean found = false;
+        initializeIterator();
+        Contact person;
+        String name = "";
+        while(hasNext() && !found){
+            person = next();
+            if(person.getPhone() == phone){
+                name = person.getName();
+                found = true;
+            }
+        }
+        return name;
+    }
 
 }
