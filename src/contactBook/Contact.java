@@ -31,8 +31,5 @@ public class Contact {
         this.email = email;
     }
 
-    //Pre: otherContact != null
-    public boolean equals(Contact otherContact) {
-        return name.equals(otherContact.getName());
-    }
+
 }
