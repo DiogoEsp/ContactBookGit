@@ -106,5 +106,24 @@ public class ContactBook {
         }
         return name;
     }
+    public boolean checkContacts(){
+        boolean same = false;
+        initializeIterator();
+        while(hasNext() && !same){
+            Contact contact = next();
+            int i = 0;
+            int num = 0;
+            while(i < counter && num < 2){
+                if(contacts[i].getPhone() == contact.getPhone()){
+                    num ++;
+                    if(num >= 2)
+                        same = true;}
+                i++;
+            }
+        }
+        return same;
+    }
+
+
 
 }
