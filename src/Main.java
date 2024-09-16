@@ -26,6 +26,8 @@ public class Main {
     public static final String BOOK_EMPTY = "contactBook.Contact book empty.";
     public static final String QUIT_MSG = "Goodbye!";
     public static final String COMMAND_ERROR = "Unknown command.";
+    public static final String NO_SAME = "All contacts have different phone numbers.";
+    public static final String SOME_SAME = "There are contacts that share phone numbers.";
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -161,4 +163,11 @@ public class Main {
         }
         else System.out.println(BOOK_EMPTY);
     }
+    private static void checkPhones(Scanner in, ContactBook cBook) {
+        if(cBook.checkContacts())
+            System.out.println(SOME_SAME);
+        else
+            System.out.println(NO_SAME);
+    }
+
 }
